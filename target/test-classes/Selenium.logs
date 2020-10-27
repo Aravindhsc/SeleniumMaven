@@ -1,0 +1,6 @@
+15:20:44,811 DEBUG Login<strong>{1}</strong>:49 - Testing
+15:20:48,876 DEBUG freemarker.cache<strong>{1}</strong>:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+15:20:48,876 DEBUG freemarker.cache<strong>{1}</strong>:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+15:20:48,884 DEBUG freemarker.cache<strong>{1}</strong>:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+15:20:48,884 DEBUG freemarker.cache<strong>{1}</strong>:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+15:20:48,884 DEBUG freemarker.cache<strong>{1}</strong>:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/D:/Eclipse_Workspace/LearningSelenium/lib/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
