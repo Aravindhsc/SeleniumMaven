@@ -1,45 +1,31 @@
 package pageObjectModel;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.LogStatus;
 
-import setup_package.Setup;
+import testCase.TestAutomation;
 
 
 
-public class Login extends Setup{
+public class Login extends TestAutomation{
 	
 	private static final Row Null = null;
 	public  WebDriver driver;
+	public WebElement	elm;
 	public  WebDriverWait wait;
 	Logger log=Logger.getLogger("Login");
-	public Sheet signUp;
-	public Sheet Login;
-	public FileInputStream fis;
-	public HSSFWorkbook WB;
-	public File file;
 	
-
 	By signin =By.xpath("//*[@class='login']");
 	By email=By.id("email");
 	By password=By.id("passwd");
@@ -66,27 +52,18 @@ public class Login extends Setup{
 	By postal_code_field=By.id("postcode");
 	By phone_field=By.id("phone");
 	By SubmitApplication=By.id("submitAccount");
+	By AccountCreationInfo=By.xpath("//*[@class='info-account']");
 	
-	Setup setup=new Setup();
+	TestAutomation setup=new TestAutomation();
 	
 	public Login(WebDriver in_driver) {
-		System.out.println("In to constructor");
 		driver=in_driver;
 		wait=new WebDriverWait(driver, 20);
 	}
 	
-	  public void setupExcel() throws IOException {
-		  	file=new File("D:\\Eclipse_Workspace\\LearningSeleniumMaven\\Testdata.xls");
-			fis=new FileInputStream(file);
-			WB= new HSSFWorkbook(fis);
-			signUp=WB.getSheet("SignUp");
-			Login=WB.getSheet("Login");
-	  }
-	
-	public void login_validations(String mail,String pass) throws IOException {
-		System.out.println("inside1");
-		String currentUsersDir = System.getProperty("user.dir");
-		System.out.println(currentUsersDir+"\\Report\\extentreports.html");
+	  
+	public void login_validations(String mail,String pass,String Firstname,String Lastname) throws Exception {
+		
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(signin));
 		driver.findElement(signin).click();
 		log.debug("Testing");
@@ -97,15 +74,24 @@ public class Login extends Setup{
 		driver.findElement(login_btn).click();
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(signout));
 		Reporter.log("Logged in successfully");
-		String actual_name=driver.findElement(account_name).getText();
-		Assert.assertEquals(actual_name, "Test new");
-		test.log(LogStatus.PASS,"Logged in successfully");	
-		
+		if(driver.findElement(signout).isDisplayed()) {
+			test.log(LogStatus.PASS,"Logged in successfully");
+		}
+		else {
+			test.log(LogStatus.FAIL, "Login failed");
+			getScreenhot(driver, "InvoiceFailure");
+		}
+			
 	}
 	
-	public void signUp(String Firstname, String Lastname,String email, String password, String address, String city, String postalcode, String phone) {
+	public WebElement btnfind(WebDriver driver) {
+		elm=driver.findElement(signin);
+		return elm;
+	}
+	
+	public void signUp(String Firstname, String Lastname,String email, String password, String address, String city, String postalcode, String phone) throws Exception {
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(signin));
-		driver.findElement(signin).click();
+		btnfind(driver).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(email_create));
 		driver.findElement(email_create).sendKeys(email);
 		driver.findElement(create_account).click();
@@ -135,6 +121,19 @@ public class Login extends Setup{
 			driver.findElement(postal_code_field).sendKeys(postalcode);
 			driver.findElement(phone_field).sendKeys(phone);
 			driver.findElement(SubmitApplication).click();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(AccountCreationInfo));
+			if(driver.findElement(AccountCreationInfo).isDisplayed()) {
+				Reporter.log("Signed up successfully");
+				test.log(LogStatus.PASS, "Signed in successfully");
+				driver.findElement(signout).click();
+			}
+			else {
+				test.log(LogStatus.FAIL, "Please use unique values");
+				getScreenhot(driver, "InvoiceFailure");
+			}
+			
+			
+			
 		}
 		
 	}

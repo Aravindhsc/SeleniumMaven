@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
-  <parameter name="Username" value="selenium_test@gmail.com"/>
-  <parameter name="URL" value="http://automationpractice.com"/>
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="url" value="{url}"/>
   <parameter name="Browser" value="Chrome"/>
-  <parameter name="Password" value="Test@12345"/>
   <test name="Test(failed)">
     <classes>
-      <class name="setup_package.Setup">
+      <class name="testCase.TestAutomation">
         <methods>
-          <include name="Test002" invocation-numbers="0 1 2"/>
+          <include name="Test01" invocation-numbers="0"/>
+          <include name="Test04"/>
+          <include name="Test02"/>
+          <include name="Test05"/>
+          <include name="Test03"/>
           <include name="setup"/>
           <include name="Teardown"/>
         </methods>
-      </class> <!-- setup_package.Setup -->
+      </class> <!-- testCase.TestAutomation -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

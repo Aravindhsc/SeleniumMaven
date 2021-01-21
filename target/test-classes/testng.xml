@@ -2,13 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <parameter name="Browser" value="Chrome"></parameter>
-  <parameter name="URL" value="http://automationpractice.com"></parameter>
-  <parameter name="Username" value="selenium_test@gmail.com"></parameter>
-  <parameter name="Password" value="Test@12345"></parameter>
+  <parameter name="url" 	value="{url}"></parameter>
   <test name="Test">
     <classes>
-      <class name="setup_package.Setup"/>
-
+      <class name="testCase.TestAutomation"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

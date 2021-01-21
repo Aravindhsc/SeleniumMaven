@@ -1,3 +1,3 @@
-setup_package\Setup.class
-seleniumTest\Testcase.class
 pageObjectModel\Login.class
+pageObjectModel\SearchPage.class
+testCase\TestAutomation.class

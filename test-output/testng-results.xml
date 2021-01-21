@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+    <line>
+      <![CDATA[Logged in successfully]]>
+    </line>
+    <line>
+      <![CDATA[Logged in successfully]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite" duration-ms="23972" started-at="2021-01-21T16:46:13Z" finished-at="2021-01-21T16:46:37Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="23972" started-at="2021-01-21T16:46:13Z" finished-at="2021-01-21T16:46:37Z">
+      <class name="testCase.TestAutomation">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:testCase.TestAutomation@2964d3bb]" name="setup" is-config="true" duration-ms="15778" started-at="2021-01-21T18:45:57Z" finished-at="2021-01-21T18:46:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://automationpractice.com/index.php]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Test01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCase.TestAutomation@2964d3bb]" name="Test01" duration-ms="4241" started-at="2021-01-21T18:46:13Z" data-provider="Signup data" finished-at="2021-01-21T18:46:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Selenium]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Assignment]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SeleniumAssignment15@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Password321@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[AddressABCD]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Minnesota]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[55082]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2147483647]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Logged in successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Test01 -->
+        <test-method status="PASS" signature="Test02()[pri:0, instance:testCase.TestAutomation@2964d3bb]" name="Test02" duration-ms="2043" started-at="2021-01-21T18:46:17Z" finished-at="2021-01-21T18:46:19Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Logged in successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Test02 -->
+        <test-method status="PASS" signature="Test03()[pri:0, instance:testCase.TestAutomation@2964d3bb]" name="Test03" duration-ms="13572" started-at="2021-01-21T18:46:19Z" finished-at="2021-01-21T18:46:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test03 -->
+        <test-method status="PASS" signature="Test04()[pri:0, instance:testCase.TestAutomation@2964d3bb]" name="Test04" duration-ms="4093" started-at="2021-01-21T18:46:33Z" finished-at="2021-01-21T18:46:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test04 -->
+        <test-method status="PASS" signature="Teardown()[pri:0, instance:testCase.TestAutomation@2964d3bb]" name="Teardown" is-config="true" duration-ms="187" started-at="2021-01-21T18:46:37Z" finished-at="2021-01-21T18:46:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
+      </class> <!-- testCase.TestAutomation -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

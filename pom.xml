@@ -3,9 +3,12 @@
   <groupId>Maven</groupId>
   <artifactId>LearningSeleniumMaven</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+  <properties>
+	         <maven.compiler.source>1.8</maven.compiler.source>
+		     <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <dependencies>
-  		<dependency>
+  	<dependency>
 		<groupId>org.testng</groupId>
 		<artifactId>testng</artifactId>
 		<version>6.11</version>
@@ -16,6 +19,7 @@
 		<artifactId>selenium-java</artifactId>
 		<version>3.141.59</version>
 	</dependency>
+	
 	<dependency>
 		<groupId>org.seleniumhq.selenium</groupId>
 		<artifactId>selenium-server</artifactId>
@@ -27,6 +31,14 @@
 		<artifactId>log4j</artifactId>
 		<version>1.2.17</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.6</version>
+	</dependency>
+		
 	
 	<dependency>
     <groupId>com.relevantcodes</groupId>
@@ -58,11 +70,13 @@
 						<version>2.12.4</version>
 						<configuration>
 							<!-- Suite testng xml file to consider for test execution -->
+							<systemPropertyVariables>
+									<url>http://automationpractice.com/index.php</url>
+							</systemPropertyVariables>
 							<suiteXmlFiles>
 								<file>src/test/java/testng.xml</file>
 							</suiteXmlFiles>
-							<source>1.8</source>
-							<target>1.8</target>
+							
 						</configuration>
 					</plugin>
 				</plugins>
